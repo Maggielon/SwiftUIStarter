@@ -17,6 +17,10 @@ class SecondTabViewModel: ObservableObject {
         Item("Forth"),
         Item("Fifth")
     ]
+    
+    func index(for item: Item) -> Int {
+        return self.items.firstIndex(of: item) ?? 0
+    }
 }
 
 class Item {

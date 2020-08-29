@@ -17,7 +17,7 @@ struct SecondTabView: View {
     var body: some View {
         NavigationView {
             List(self.viewModel.items) { item in
-                NavigationLink(destination: SecondTabRowView(title: item.title), tag: self.viewModel.items.firstIndex(of: item) ?? 0, selection: self.$randomSelectedIndex) {
+                NavigationLink(destination: SecondTabRowView(title: item.title), tag: self.viewModel.index(for: item), selection: self.$randomSelectedIndex) {
                     Text(item.title)
                         .foregroundColor(.black)
                 }
